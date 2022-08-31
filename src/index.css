@@ -39,9 +39,9 @@ body {
   }
 }
 
-/* TODO: Generate this for elements to hide Light DOM children in browsers
-   that don't support Declarative Shadow DOM to avoid FOUC. */
-my-element:not(:defined) > template[shadowroot] ~ *,
-my-child:not(:defined) > template[shadowroot] ~ * {
+/* Make all template shadowroot invisible till polyfill converts it to
+ * actual shadowroot. This is only for browsers that don't support
+ * Declarative Shadow DOM */ 
+* > template[shadowroot] ~ * {
   display: none;
 }
