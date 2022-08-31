@@ -42,9 +42,9 @@ All this is built on top of Vite which is where most people seem to be these day
 
 ## What's next?
 
-Currently the loading of the client JS is one shot and hydrates the whole DOM tree. The example client bundle is currently only ~25 KiB unzipped with components and Lit framework with SSR support (and ~8.77 KiB gzipped). But an application in real life can keep growing to a point where it can be very bad for performance to do it one shot. It would be a separate exercise to progressively hydrate it - though Web components make it easier to do such things given its clearly defined encapsulation and interfaces between components.
+Currently the loading of the client JS is one shot and hydrates the whole DOM tree. The example client bundle is currently only ~25 KiB unzipped with components and Lit framework with SSR support (and ~8.77 KiB gzipped). But an application in real life can keep growing to a point where it can be very bad for performance to do it in one shot. It would be a separate exercise to progressively hydrate it - though Web components do make it easier to do such things, given its clearly defined encapsulation and interfaces.
 
-HMR with SSR currently reloads the whole page. Can we reload just the component code. It can pick up where the older components left off (It should all be serializable in the DOM anyway).
+HMR with SSR currently reloads the whole page. Can we reload just the component code? It can pick up where the older components left off (It should all be serializable in the DOM anyway).
 
 It would also be cool to support different frameworks other than Lit that output web components - Stencil, Angular, Vue, Svelte etc.
 
