@@ -24,6 +24,10 @@ npm run build:server
 npm run serve
 ```
 
+## Try it in StackBlitz!
+
+If you don't want any of this hassle just try it on StackBlitz at https://stackblitz.com/github/vikerman/vite-lit-ssr.
+
 ## How it works
 
 Vite provides a low level [SSR API](https://vitejs.dev/guide/ssr.html) that can be hooked to the [Lit SSR APIs](https://github.com/lit/lit/blob/main/packages/labs/ssr/README.md) to render the initial state of the app on the server. Lit SSR produces Declarative Shadow DOM(DSD) that can be displayed on browsers that support it (currently Chrome and Edge) without needign any JS.
@@ -39,6 +43,8 @@ All this is built on top of Vite which is where most people seem to be these day
 ## What's next?
 
 Currently the loading of the client JS is one shot and hydrates the whole DOM tree. The example client bundle is currently only ~25 KiB unzipped with components and Lit framework with SSR support (and ~8.77 KiB gzipped). But an application in real life can keep growing to a point where it can be very bad for performance to do it one shot. It would be a separate exercise to progressively hydrate it - though Web components make it easier to do such things given its clearly defined encapsulation and interfaces between components.
+
+HMR with SSR currently reloads the whole page. Can we reload just the component code. It can pick up where the older components left off (It should all be serializable in the DOM anyway).
 
 It would also be cool to support different frameworks other than Lit that output web components - Stencil, Angular, Vue, Svelte etc.
 
