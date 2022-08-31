@@ -1,0 +1,29 @@
+{
+  "name": "example",
+  "private": true,
+  "type": "module",
+  "description": "Vite Lit SSR example",
+  "author": "viks@google.com",
+  "license": "Apache-2.0",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "node server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/entry-server.ts ",
+    "serve": "cross-env NODE_ENV=production node server"
+  },
+  "devDependencies": {
+    "compression": "^1.7.4",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.1",
+    "serve-static": "^1.15.0",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9"
+  },
+  "dependencies": {
+    "@lit-labs/ssr": "^2.2.3",
+    "lit": "^2.3.1"
+  }
+}
